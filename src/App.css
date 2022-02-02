@@ -1,38 +1,229 @@
-.App {
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.title {
+  font-size: 4em;
+  font-weight: bold;
   text-align: center;
+  text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Menu */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+}
+html {
+  font-size: calc(10px + (14 - 10) * ((100vw - 400px) / (800 - 400)));
+}
+.box {
+  font-family: sans-serif;
+  background: #260f26;
+  height: 600px;
+}
+.page {
+  width: 90%;
+  max-width: 1000px;
+  margin: 3rem auto;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  background: #361f36;
+}
+.article {
+  padding: 5%;
+}
+.article__title {
+  margin-bottom: 1em;
+  color: #fff;
+  opacity: 0.8;
+}
+.article__paragraph {
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+  color: #fff;
+  opacity: 0.6;
+}
+.menu {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  margin: 3rem auto;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  background: #361f36;
+}
+.menu__item {
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.6;
+  border-bottom-width: 0.2rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+.menu__item:hover {
+  opacity: 1;
+  border-bottom-color: hsl(60, 50%, 50%);
+}
+.menu__item-active,
+.menu__item-active:hover {
+  opacity: 1;
+  border-bottom-color: hsl(120, 50%, 50%);
+}
+
+/* CRUD */
+
+.home-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 600px;
+  margin: 30px auto;
+  background-color: #808080;
+  padding-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-box {
+  width: 580px;
+  padding: 5px;
+  margin: 10px auto;
+  background-color: #f5f5f5;
+  border-radius: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-box_one {
+  width: 100px;
+  margin-left: auto;
+}
+.add-post {
+  width: 100px;
+  text-decoration: none;
+  background-color: #4169e1;
+  color: #ffffff;
+  padding: 5px 0px 5px 5px;
+  font-weight: bold;
+  border-radius: 7px;
+  font-size: 12px;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+.new-post {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #808080;
+  padding-bottom: 10px;
+}
+.post {
+  width: 580px;
+  background-color: #ffffff;
+  margin: auto;
+  border-radius: 7px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.posts-new__box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+}
+.post:last-child {
+  margin-bottom: 0px;
+}
+.post-name {
+  color: #4169e1;
+  font-weight: bold;
+}
+.post-img {
+  border-radius: 50%;
+  float: left;
+  margin-right: 15px;
+}
+.post-created {
+  color: #c0c0c0;
+  font-weight: bold;
+}
+.post-content {
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.btn_cancel {
+  width: 20px;
+  margin: 5px 10px 0px auto;
+  cursor: pointer;
+}
+.btn_container {
+  width: 220px;
+  margin-left: auto;
+  padding-right: 10px;
+}
+.edit-btn {
+  width: 100px;
+  background-color: #4169e1;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.delete-btn {
+  width: 100px;
+  background-color: #dc143c;
+  padding: 3.5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.post-form {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #808080;
+  padding-bottom: 10px;
+}
+.close-btn {
+  position: relative;
+  bottom: 100px;
+  left: 570px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-input {
+  margin-top: 10px;
+  width: 580px;
+  height: 120px;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 30px 10px;
+}
+.btn-box_two {
+  margin-left: auto;
+  margin-right: 7px;
 }
